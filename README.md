@@ -1,11 +1,12 @@
 # Simple Task Server
 
-A minimal Express backend with Supabase (PostgreSQL) for task management.
+A minimal Express backend with AWS RDS (PostgreSQL) for task management.
 
 ## Features
 
 - **POST /tasks** - Create a new task
 - **GET /tasks** - List all tasks
+- **GET /health** - Health check endpoint
 
 ## Database Schema
 
@@ -18,9 +19,13 @@ tasks (
 
 ## Setup & Run
 
-1. Create a `.env` file with your Supabase connection string:
+1. Create a `.env` file with your AWS RDS connection details:
 ```bash
-DATABASE_URL=your_supabase_postgres_connection_string
+DB_HOST=your-rds-endpoint.region.rds.amazonaws.com
+DB_USER=your-username
+DB_PASSWORD=your-password
+DB_NAME=your-database-name
+DB_PORT=5432
 PORT=3000
 ```
 
